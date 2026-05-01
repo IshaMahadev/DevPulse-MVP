@@ -34,6 +34,9 @@ dev-productivity/
 ## Demo Video 
 https://drive.google.com/file/d/1JwMWZJnOPC0Ees2AS2eyWqFdGN4q98Pm/view?usp=sharing
 
+## Miro Board
+https://miro.com/app/board/uXjVHZxyZj4=/?share_link_id=961967769615
+
 ## Setup Instructions
 
 ### Step 1 — Place the Excel file
