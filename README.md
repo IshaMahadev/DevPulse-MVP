@@ -1,4 +1,4 @@
-# ⚡ DevPulse — Developer Productivity Dashboard
+# DevPulse — Developer Productivity Dashboard
 
 DevPulse is a modern, full-stack analytics dashboard designed to measure, visualize, and interpret developer productivity metrics. Built with a **FastAPI** Python backend and a premium **React** frontend, it provides both individual contributors and engineering managers with actionable insights into software delivery performance (Lead Time, Cycle Time, PR Throughput, Deployment Frequency, and Bug Rates).
 
