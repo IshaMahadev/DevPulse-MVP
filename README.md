@@ -91,7 +91,7 @@ Frontend will open at: **http://localhost:3000**
 
 The `"proxy": "http://localhost:8000"` in package.json means React automatically forwards API calls to FastAPI — no CORS issues.
 
----
+--
 
 ## API Endpoints
 
