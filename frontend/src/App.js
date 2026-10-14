@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import InterpretationPanel from "./components/InterpretationPanel";
 import ManagerView from "./components/ManagerView";
 import MetricsDictionary from "./components/MetricsDictionary";
-import { fetchDevelopers, fetchMonths, fetchMetrics, fetchManagerSummary } from "./hooks/useApi";
+import { fetchDevelopers, fetchMonths, fetchMetrics, fetchManagerSummary, API_BASE } from "./hooks/useApi";
 import "./App.css";
 
 function MetricRow({ label, value, tooltip, isPercent = false }) {
@@ -151,7 +151,7 @@ export default function App() {
               <>
                 <div className="chart-container">
                   <h3>Trend Analytics</h3>
-                  <img className="chart-image" src={`/visualize/${selectedDev}`} alt="Trend Chart" />
+                  <img className="chart-image" src={`${API_BASE}/visualize/${selectedDev}`} alt="Trend Chart" />
                 </div>
                 <InterpretationPanel 
                   interpretation={metrics.interpretation}

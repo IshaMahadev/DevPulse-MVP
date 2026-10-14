@@ -1,4 +1,5 @@
 import React from "react";
+import { API_BASE } from "../hooks/useApi";
 
 const COLS = [
   { key: "developer_name", label: "Developer" },
@@ -26,7 +27,7 @@ export default function ManagerView({ data, month }) {
           <span style={{width: "8px", height: "8px", borderRadius: "50%", background: "var(--accent-blue)", display: "inline-block", boxShadow: "0 0 10px var(--accent-blue)"}}></span>
           TEAM PRODUCTIVITY COMPARISON
         </h3>
-        <img className="chart-image" src={`/visualize-team/${month}`} alt="Team Comparison Chart" />
+        <img className="chart-image" src={`${API_BASE}/visualize-team/${month}`} alt="Team Comparison Chart" />
       </div>
 
       {teams.map(team => {

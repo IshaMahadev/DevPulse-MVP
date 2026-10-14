@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -5,12 +6,30 @@ from data_loader import get_all_developers, get_metrics_for_developer, get_all_m
 
 app = FastAPI(title="Dev Productivity API")
 
+# Configure CORS origins
+raw_frontend_url = os.getenv("FRONTEND_URL", "https://dev-pulse-mvp.vercel.app")
+frontend_url_clean = raw_frontend_url.rstrip("/")
+
+allowed_origins = {
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://dev-pulse-mvp.vercel.app",
+    frontend_url_clean,
+    f"{frontend_url_clean}/",
+}
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=list(allowed_origins),
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+@app.get("/")
+def health_check():
+    return {"status": "ok", "message": "DevPulse API is live and healthy"}
 
 @app.get("/developers")
 def list_developers():
